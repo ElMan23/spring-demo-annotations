@@ -3,7 +3,7 @@ package com.example.springdemoannotations;
 import org.springframework.stereotype.Component;
 
 // Default bean id will be "tennisCoach"
-@Component("theTennisCoach")
+@Component
 public class TennisCoach implements Coach {
 
     @Override
