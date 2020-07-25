@@ -15,6 +15,8 @@ public class AnnotationDemoApp {
 
         // Call a method on the bean
         System.out.println(theCoach.getDailyWorkout());
+        // Call a method to get the dependecy injected
+        System.out.println(theCoach.getDailyFortune());
 
         // Close the context
         context.close();
