@@ -1,6 +1,7 @@
 package com.example.springdemoannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 // Default bean id will be "tennisCoach"
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
     @Autowired
+    @Qualifier("happyFortuneService")
     private FortuneService fortuneService;
 
     // Default constructor
