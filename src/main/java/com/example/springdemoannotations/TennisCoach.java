@@ -5,9 +5,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 // Default bean id will be "tennisCoach"
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class TennisCoach implements Coach {
 
     @Autowired
@@ -24,6 +27,18 @@ public class TennisCoach implements Coach {
         this.fortuneService = fortuneService;
     }
     */
+
+    // Init method
+    @PostConstruct
+    public void doMyStartUpStuff() {
+        System.out.println(">> TennisCoach: startup");
+    }
+
+    // Destroy method
+    @PreDestroy
+    public void doMyCleanUpStuff() {
+        System.out.println(">> TennisCoach: cleanup");
+    }
 
     // Getters & Setters
     public FortuneService getFortuneService() {
